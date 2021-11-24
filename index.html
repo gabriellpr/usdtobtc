@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quanto você teria de Bitcoin hoje?</title>
+
+	<script src="https://kit.fontawesome.com/199b72f6ff.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li>Billionaires Checks</li>
+				<li>Sobre nós</li>
+				<li>Billionaires Br</li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<h1>Quanto você teria de Bitcoin hoje?</h1>
+		<section>
+			<div class="section-left">
+                <input type="number" class="amount-first" value="1">
+                <select id="currency-first">
+                    <option value="USD" selected>USD</option>
+                    <option value="BRL">BRL</option>
+                </select>
+            </div>
+		</section>
+
+		<button onclick="calc()" class="swap">
+                <i class="fas fa-exchange-alt"></i>
+            </button>
+		<p class="rate-info"></p>
+	</main>
+
+	<footer>
+		<h2>Billionaires</h2>
+	</footer>
+
+
+	<script type="text/javascript">
+		const currencyFirst = document.querySelector('#currency-first');
+		const currencySecond = document.querySelector('#currency-second');
+		const amountFirst = document.querySelector('.amount-first');
+		const btnSwap = document.querySelector('.swap');
+		const rateInfo = document.querySelector('.rate-info');
+
+		let url;
+
+		const calc = () => {
+			fetch("https://bitcoinaverage-global-bitcoin-index-v1.p.rapidapi.com/indices/global/ticker/BTCUSD", {
+					"method": "GET",
+					"headers": {
+						"x-rapidapi-host": "bitcoinaverage-global-bitcoin-index-v1.p.rapidapi.com",
+						"x-rapidapi-key": "152bd4b7bbmsh7872e47285841e9p13c288jsn0b0e587859e5"
+					}
+				})
+				.then(res => res.json())
+				.then(data => {
+
+					let btc = data.ask;
+					vezes = btc / 3614.00;
+					console.log(vezes);
+					let resultado = amountFirst.value  * vezes;
+					rateInfo.textContent = resultado;
+					console.log(resultado)
+
+				})
+
+
+		}
+
+		const change = () => {
+    		let tempCurrency = currencyFirst.value;
+    		currencySecond.value = tempCurrency;
+}
+
+currencyFirst.addEventListener('change', calc);
+amountFirst.addEventListener('input', calc);
+btnSwap.addEventListener('click', change);
+
+
+	</script>
+</body>
+</html>
