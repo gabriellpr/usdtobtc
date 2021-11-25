@@ -72,20 +72,26 @@ main section .section-left {
 
 main input {
 	font-size: 30px;
+	background-color: transparent;
+	border:1px solid black;
+	color: #DAA520;
+	border-radius: 30px;
+	text-align: center;
 }
 
 main select {
-	background-color: gray;
-	color: #DAA520;
-
-	border: 1px solid black;
-	border-radius: 2px;
 
 	height: 40px;
 	width: 60px;
 
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: bold;
+
+	background-color: transparent;
+	border:1px solid black;
+	color: #DAA520;
+	border-radius: 30px;
+	text-align: center;
 }
 
 main button {
@@ -149,25 +155,32 @@ footer{
     }
 
     main input {
-    	font-size: 60px;
-    }
+	font-size: 30px;
+	background-color: transparent;
+	border:1px solid black;
+	color: #DAA520;
+	border-radius: 30px;
+	text-align: center;
+}
 
     main h3 {
 		font-size: 60px;
 	}
 
 	main select {
-		background-color: gray;
-		color: #DAA520;
 
-		border: 1px solid black;
-		border-radius: 2px;
+	height: 40px;
+	width: 60px;
 
-		height: 80px;
-		width: 120px;
+	font-size: 18px;
+	font-weight: bold;
 
-		font-size: 48px;
-	}
+	background-color: transparent;
+	border:1px solid black;
+	color: #DAA520;
+	border-radius: 30px;
+	text-align: center;
+}
 	main p {
 		font-size: 98px;
 		color: #DAA520;
