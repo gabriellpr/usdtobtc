@@ -98,10 +98,12 @@ main button {
 	height: 30px;
 	width: 80px;
 	background-color: gray;
-	color: #DAA520;	
 	border: 1px solid black;
 	border-radius: 2px;
 
+}
+main button i {	
+	color: #DAA520;	
 }
 
 main h3 {
@@ -204,6 +206,11 @@ footer{
 	footer h2 {
 		font-size: 68px;
 		height: 100px;
+	}
+
+	main section select  {
+		width: 80px;
+		font-size: 36px;
 	}
 
 
